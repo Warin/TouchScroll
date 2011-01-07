@@ -505,7 +505,7 @@ TouchScroll.prototype = {
 
 	// Handles touch start events on the scroller
 	onTouchStart: function onTouchStart(event){
-		if(!this._doScroll){
+		if(!this._doScroll || event.srcElement.tagName=="SELECT"){
 			return;
 		}
 		this.__proto__.currentScroller = this;
